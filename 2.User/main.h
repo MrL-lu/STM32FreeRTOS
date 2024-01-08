@@ -24,7 +24,8 @@
 #include "stm32f10x.h"   //引用stm32头文件
 #include "stdio.h"
 
-#include "list.h"
+#include "FreeRTOS.h"					//FreeRTOS使用		  
+#include "task.h"
 /* 版本更新信息 ----------------------------------------------------------------*/
 
 

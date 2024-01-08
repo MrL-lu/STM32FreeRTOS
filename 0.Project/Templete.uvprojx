@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>..\4.Object\</OutputDirectory>
-          <OutputName>Templete</OutputName>
+          <OutputName>Fire_FreeRTOS</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -311,7 +311,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>3</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\1.STMDrivers\Startup;..\1.STMDrivers\CMSIS;..\1.STMDrivers\STM32F10x_StdPeriph_Driver\inc;..\2.User;..\3.BSP;..\5.FreeRTOS\include</IncludePath>
+              <IncludePath>..\1.STMDrivers\CMSIS;..\1.STMDrivers\STM32F10x_StdPeriph_Driver\inc;..\2.User;..\3.BSP;..\5.FreeRTOS\include;..\5.FreeRTOS\port\MemMang;..\5.FreeRTOS\port\RVDS\ARM_CM3</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -535,53 +535,65 @@
               <FileType>1</FileType>
               <FilePath>..\2.User\stm32f10x_it.c</FilePath>
             </File>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\2.User\FreeRTOSConfig.h</FilePath>
+            </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>BSP</GroupName>
-        </Group>
-        <Group>
-          <GroupName>FreeRTOS_Ports</GroupName>
         </Group>
         <Group>
           <GroupName>FreeRTOS_Source</GroupName>
           <Files>
             <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\src\croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_groups.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\src\event_groups.c</FilePath>
+            </File>
+            <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\5.FreeRTOS\list.c</FilePath>
+              <FilePath>..\5.FreeRTOS\src\list.c</FilePath>
             </File>
             <File>
-              <FileName>list.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\list.h</FilePath>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\src\queue.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOS.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\FreeRTOS.h</FilePath>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\src\tasks.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOSConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\FreeRTOSConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>portable.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\portable.h</FilePath>
-            </File>
-            <File>
-              <FileName>portmacro.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\portmacro.h</FilePath>
-            </File>
-            <File>
-              <FileName>projdefs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\5.FreeRTOS\include\projdefs.h</FilePath>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\src\timers.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOS_Ports</GroupName>
+          <Files>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\port\RVDS\ARM_CM3\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\5.FreeRTOS\port\MemMang\heap_4.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
         </Group>
         <Group>
           <GroupName>Doc</GroupName>
